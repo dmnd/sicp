@@ -1,0 +1,6 @@
+(define (mult-iter a b)
+  (define (mi a b add)
+    (cond ((= b 0) add)
+          ((even? b) (mi (double a) (halve b) add))
+          (else (mi a (- b 1) (+ a add)))))
+  (mi a b 0))
